@@ -32,7 +32,7 @@ def longestRun(lst):
         if lst[-1] == lst[-2]:
 
             longest_run_lst = streak_lst
-        if longest_run_lst
+        #if longest_run_lst
 
 
     #lst.count(lst[i])
