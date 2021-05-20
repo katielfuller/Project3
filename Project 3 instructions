@@ -1,0 +1,31 @@
+I don't have access to the course materials anymore therefore I don't have the instructions to the project so I will do my best to describe them
+1. open the file 'county-covid-data.txt and read it
+2. create a list of all the county names
+3. create a dictionary with the counties and their confirmed cases and deaths, then add 'Texas' to the end of the dictionary and the total confirmed cases of all the counties and all their deaths
+4. close the file
+5. return the dictionary and county list
+6. create a new function?? (I just went blank on the name, I remember in the instructions they want this to be the main code)
+7. print the welcome message "Welcome to the Texas Covid Database Dashboard
+                              This provides Covid data in Texas as of 1/26/21.
+                              Creating dictionary from file: county-covid-data.txt "
+8. if it's not the 'county-covid-data.txt file then print the message "File county-covid-data.txt' not found.", else print "Enter any of the following commands:
+                                                                                                                            Help - list available commands;
+                                                                                                                            Quit - exit this dashboard;
+                                                                                                                            Counties - list all Texas counties;
+                                                                                                                            Cases <countyName>/Texas - confirmed Covid cases in specified county or statewide;
+                                                                                                                            Deaths <countyName>/Texas - Covid deaths in specified county or statewide."
+9. have a command that says "Please enter a command: "
+10. you can input help, which prints the message "Help  - list available commands;
+                                                  Quit - exit this dashboard;
+                                                  Counties - list all Texas counties;
+                                                  Cases <countyName>/Texas - confirmed Covid cases in specified county or statewide;
+                                                  Deaths <countyName>/Texas - Covid deaths in specified county or statewide."
+11. the command 'counties' = the list of counties
+12. the command 'cases ' followed by a county or texas returns the confirmed cases. The same thing but with 'deaths'
+    if the county does not exist print "County [the county you input] is not recognized.
+13. the command 'quit' returns the message "Thank you for using the Texas Covid Database Dashboard.  Goodbye!" and exits out of the command prompt
+14. if you input a different command print the messsage "Command is not recognized.  Try again!"
+
+I think that's it. Let me know if anything is unclear :)
+
+
