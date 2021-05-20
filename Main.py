@@ -4,8 +4,7 @@ def Covid_Cases():
     file = 'county-covid-data.txt'
 
 
-
-    file = open(file)
+    file = open(file, 'r')
     county_list = []
     read_lines = file.readlines()
     covid_dict = {}
@@ -23,8 +22,6 @@ def Covid_Cases():
             total_cases += confirmed_cases
             total_deaths += deaths
 
-
-
             #adding things to dict and list
 
             county_list.append(county)
@@ -41,7 +38,7 @@ def Main():
     covid_dict, county_list = Covid_Cases()
     print("Welcome to the Texas Covid Database Dashboard \n\
 This provides Covid data in Texas as of 1/26/21. \n\
-Creating dictionary from file: ")
+Creating dictionary from file: county-covid-data.txt ")
 
 
     if not os.path.isfile('county-covid-data.txt'):
@@ -54,22 +51,22 @@ Quit - exit this dashboard; \n\
 Counties - list all Texas counties; \n\
 Cases <countyName>/Texas - confirmed Covid cases in specified county or statewide; \n\
 Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \
-                                         ")
+			")
 
 
     while True:
-        command = input("\nPlease enter a command: ").lower().split()
+        command = input("\nPlease enter a command: ").split()
         args = command[1:]
         arg = " ".join(args).title()
+        orginal_arg = " ".join(args)
         elements = 0
-        if command[0] == 'help':
-            print("Enter any of the following commands: \n\
-Help  - list available commands; \n\
+        if command[0].lower() == 'help':
+            print("Help  - list available commands; \n\
 Quit - exit this dashboard; \n\
 Counties - list all Texas counties; \n\
 Cases <countyName>/Texas - confirmed Covid cases in specified county or statewide; \n\
-Deaths <countyName>/Texas - Covid deaths in specified county or statewide.")
-        elif command[0] == 'counties':
+Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
+        elif command[0].lower() == 'counties':
             for county in county_list:
 
                 if elements == 10:
@@ -78,29 +75,41 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide.")
                     print()
 
                 print(county, end = ", ")
-                elements += 1
 
-        elif command[0] == 'cases':
-            if arg in covid_dict.keys():
+                elements += 1
+            print()
+
+
+        elif command[0].lower() == 'cases':
+
+            if arg == "Texas":
+                print(f"Texas total confirmed Covid cases: {covid_dict['Texas'][0]}")
+
+            elif arg in covid_dict.keys():
 
                 print(f"{arg} county has {covid_dict[arg][0]} confirmed Covid cases.")
 
-            elif arg == "texas":
-                print(f"Texas total confirmed Covid cases: {covid_dict['Texas'][0]}")
+            else:
+                print(f"County {orginal_arg} is not recognized.")
 
-        elif command[0] == 'deaths':
+        elif command[0].lower() == 'deaths':
 
-            if arg in covid_dict.keys():
+            if arg == 'Texas':
+                print(f"Texas total confirmed Covid deaths: {covid_dict['Texas'][1]}")
+
+            elif arg in covid_dict.keys():
                 print(f"{arg} county has {covid_dict[arg][1]} fatalities.")
 
-            elif arg.lower() == 'texas':
-                print(f"Texas total confirmed Covid deaths: {covid_dict[Texas][1]}")
+            else:
+                print(f"County {original_arg} is not recognized.")
 
-        elif command[0] == 'quit':
+        elif command[0].lower() == 'quit':
+
             print("Thank you for using the Texas Covid Database Dashboard.  Goodbye!")
             exit()
 
         else:
+
             print("Command is not recognized.  Try again!")
 
 
