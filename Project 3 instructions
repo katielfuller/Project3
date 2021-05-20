@@ -20,7 +20,7 @@ I don't have access to the course materials anymore therefore I don't have the i
                                                   Counties - list all Texas counties;
                                                   Cases <countyName>/Texas - confirmed Covid cases in specified county or statewide;
                                                   Deaths <countyName>/Texas - Covid deaths in specified county or statewide."
-11. the command 'counties' = the list of counties, 10 counties per line separated by a comma
+11. the command 'counties' = the list of counties, 10 counties per line separated by a comma, prof said it's ok is there's a comma after the last county
 12. the command 'cases ' followed by a county or texas returns the confirmed cases. The same thing but with 'deaths'
     if the county does not exist print "County [the county you input] is not recognized.
 13. the command 'quit' returns the message "Thank you for using the Texas Covid Database Dashboard.  Goodbye!" and exits out of the command prompt
