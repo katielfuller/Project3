@@ -110,6 +110,7 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
         #I think this is what you mean
         elif arg == "":
             exit()
+
         else:
 
             print("Command is not recognized.  Try again!")
