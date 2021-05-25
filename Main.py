@@ -107,7 +107,9 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
 
             print("Thank you for using the Texas Covid Database Dashboard.  Goodbye!")
             exit()
-
+        #I think this is what you mean
+        elif arg == "":
+            exit()
         else:
 
             print("Command is not recognized.  Try again!")
