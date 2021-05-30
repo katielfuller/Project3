@@ -88,6 +88,9 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
             if arg == "Texas":
                 print(f"Texas total confirmed Covid cases: {covid_dict['Texas'][0]}")
 
+            elif arg == '':
+                print("Need to input county or Texas after cases")
+
             elif arg in covid_dict.keys():
 
                 print(f"{arg} county has {covid_dict[arg][0]} confirmed Covid cases.")
@@ -99,6 +102,9 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
 
             if arg == 'Texas':
                 print(f"Texas total confirmed Covid deaths: {covid_dict['Texas'][1]}")
+
+            elif arg == '':
+                print("Need to input county or Texas after deaths")
 
             elif arg in covid_dict.keys():
                 print(f"{arg} county has {covid_dict[arg][1]} fatalities.")
