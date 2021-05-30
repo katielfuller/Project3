@@ -57,6 +57,9 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \
     while True:
         command = input("\nPlease enter a command: ").split()
         args = command[1:]
+        print(f"this is command  -{command}-")
+        if not command:
+            command.append('help')
         arg = " ".join(args).title()
         orginal_arg = " ".join(args)
         elements = 0
@@ -101,14 +104,14 @@ Deaths <countyName>/Texas - Covid deaths in specified county or statewide. \n")
                 print(f"{arg} county has {covid_dict[arg][1]} fatalities.")
 
             else:
-                print(f"County {original_arg} is not recognized.")
+                print(f"County {orignal_arg} is not recognized.")
 
         elif command[0].lower() == 'quit':
 
             print("Thank you for using the Texas Covid Database Dashboard.  Goodbye!")
             exit()
         #I think this is what you mean
-        elif arg == "":
+        elif command == " ":
             exit()
 
         else:
