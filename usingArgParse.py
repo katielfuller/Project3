@@ -16,7 +16,8 @@ if __name__ == '__main__':
     # e.g. usingArgParse -h
     #
     parser = argparse.ArgumentParser(description='This script shows current COVID infection and death rates for all Texas counties', formatter_class=formatter)
-    # Specify the three possible options.  Must specify exactly one of them
+    #parser = argparse.ArgumentParser(description='This script shows current COVID infection and death rates for all Texas counties')
+                                     # Specify the three possible options.  Must specify exactly one of them
     parser.add_argument('-c', '--Cases', help='Covid cases in the specified county', action='store_false')
     parser.add_argument('-d', '--Deaths', help='Covid deaths in the specified county', action='store_false')
     parser.add_argument('-cnty', '--County', help='The Texas county of interest (defaults to statewide)', default="statewide")
