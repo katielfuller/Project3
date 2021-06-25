@@ -18,10 +18,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This script shows current COVID infection and death rates for all Texas counties', formatter_class=formatter)
     #parser = argparse.ArgumentParser(description='This script shows current COVID infection and death rates for all Texas counties')
     # Specify the three possible options.  Must specify exactly one of them
-    parser.add_argument('-c', '--Cases', help='Covid cases in the specified county', action='store_false')
-    parser.add_argument('-d', '--Deaths', help='Covid deaths in the specified county', action='store_false')
-    parser.add_argument('-cnty', '--County', help='The Texas county of interest (defaults to statewide)', default="statewide")
-    parser.add_argument('-l', '--List', help='The list of counties in Texas', action='store_false')
+    parser.add_argument('-c', '--Cases', help='Covid cases in the specified county', type=str, choices=[])
+    parser.add_argument('-d', '--Deaths', help='Covid deaths in the specified county', type=str, choices=[])
+    parser.add_argument('-cnty', '--County', help='The Texas county of interest (defaults to statewide)', default='statewide', type=str)
+    parser.add_argument('-l', '--List', help='The list of counties in Texas', type=str)
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
 
     print(f'Reporting for {args.County}')
@@ -34,4 +34,6 @@ if __name__ == '__main__':
 
     if args.List:
         print(f'when i get this i will print the list of counties - {args.List}')
+
+
 
